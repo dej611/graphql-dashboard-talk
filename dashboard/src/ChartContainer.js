@@ -1,8 +1,6 @@
 import React, {PureComponent} from 'react';
-
 import {Query} from 'react-apollo';
 import gql from 'graphql-tag';
-import Chart from './Chart';
 
 const ALL_TAGS = gql`
     query {
@@ -15,12 +13,12 @@ const ALL_TAGS = gql`
             }
         }
     }
-`;
+`
 
 export default class ChartContainer extends PureComponent{
     render(){
         return <div>
-            Meetup Tags
+            Chart container
             <Query query={ALL_TAGS}>
                 {({loading, error, data}) => {
                     if(loading){
@@ -29,7 +27,11 @@ export default class ChartContainer extends PureComponent{
                     if(error){
                         return <p>Error</p>
                     }
-                    return <Chart data={data.allTags} label='name' size={tag => tag.meetups.length}/>;
+                    return <div>
+                        {data.allTags.map( (tag) => {
+                            return <p>[{tag.id}] - {tag.name} => {tag.meetups.length} meetups</p>
+                        })}
+                    </div>
                 }}
             </Query>
         </div>;
