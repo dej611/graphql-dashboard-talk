@@ -8,7 +8,34 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
-    uri: 'http://localhost:4000'
+    uri: 'http://localhost:4000',
+    clientState: {
+        defaults: {
+            selection: null
+        },
+        typeDefs: `
+            type Selection {
+                type: String,
+                id: String
+            }
+
+            type Query{
+                selection: Selection
+            }
+
+            type Mutation{
+                setSelection(selection: Selection) : Selection
+            }
+        `,
+        resolvers:{
+            Mutation:{
+                setSelection: (_, {selection}, {cache}) => {
+                    cache.writeData({data: {selection}});
+                    return selection;
+                }
+            }
+        }
+    }
 });
 
 ReactDOM.render(<ApolloProvider client={client}>
