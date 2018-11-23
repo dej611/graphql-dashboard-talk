@@ -1,44 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Costruire una dashboard con GraphQL e React
 
-## Available Scripts
+[Link slide del talk](https://docs.google.com/presentation/d/1hY6oVJSPujvnBYfFrGeRi_MyafQjkbiobfK23ASHtXw/edit?usp=sharing)
+[Video talk](https://youtu.be/U41lUJCs5H4?t=1768)
 
-In the project directory, you can run:
+Questo repository contiene il codice mostrato durante il talk del 21/11/2018 al meetup RomaJS per la parte client.
 
-### `npm start`
+Ad ogni modo è stata inclusa una configurazione Docker (mediante `docker-compose`) con tutto il necessario per far girare la dashboard in locale.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Per informazioni riguardo la prima parte del talk (cioè come ottimizzare GraphQL lato server) fare riferimento a questo repository: https://github.com/GraphRM/graphql-graphdb
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Requisiti
 
-### `npm test`
+* NodeJS > 8
+* Docker con `docker-compose`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
 
-### `npm run build`
+Il repository contiene già uno snapshot dei dati per il database, mentre il server GraphQL è stato creato mediante `Apollo Server`.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Per avviare i container Docker andare sulla cartella principale del progetto ed eseguire:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```sh
+docker-compose up -d
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Al termine dell'installazione:
+* il database Neo4J sarà disponibile su `localhost:7474` - può richiedere qualche minuto per il primo avvio
+* il server GraphQL sarà disponibile su `localhost:4000` - in questo caso una versione Apollo dell'editor GraphiQL sarà disponibile, dove sarà mostrato anche lo schema.
 
-### `npm run eject`
+Il codice del server GraphQL è disponibile nella cartella `server` di questo repository.
+I dati del database sono stati pre-caricati tramite la cartella `data` in questo repository.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Server -> Database
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Un file `.env` è stato incluso in questo repository all'interno della cartella `server` di proposito, in modo da mostrare come è stato configurato il database.
+La connessione tra il server GraphQL ed il database Neo4J avviene mediante l'adapter ufficiale Neo4J.
+Per maggiori informazioni consultare anche il file `docker-compose.yml`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Dashboard
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+La dashboard in questo repository è stata creata con il seguente comando:
 
-## Learn More
+```
+npx create-react-app dashboard
+cd dashboard
+npm install apollo-boost react-apollo graphql graphql-tag
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Next steps
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I diversi branch in questo repository sono stati numerati per mostrare passo dopo passo come è stato costruito il progetto.

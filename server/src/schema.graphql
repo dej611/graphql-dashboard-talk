@@ -1,0 +1,39 @@
+scalar Date
+
+type Meetup {
+  id: ID!
+  name: String
+  link: String
+  members: [User]! @relation(name: "JOINED", direction:"IN")
+  events: [Event]! @relation(name: "HAS_EVENT", direction:"OUT")
+  tags: [Tag]! @relation(name: "TAGGED", direction:"OUT")
+}
+
+type User {
+  id: ID!
+  name: String
+  status: String
+  meetups: [Meetup]! @relation(name: "JOINED", direction:"OUT")
+  events: [Event]! @relation(name: "PARTICIPATED", direction:"OUT")
+}
+
+type Tag {
+  id: ID!
+  name: String
+  group: String
+  meetups: [Meetup]! @relation(name: "TAGGED", direction:"IN")
+}
+
+type Event {
+  id: ID!
+  name: String
+  localDate: Date
+  description: String
+  partecipants: [User]! @relation(name: "PARTICIPATED", direction:"IN")
+  meetup: Meetup! @relation(name: "HAS_EVENT", direction:"IN")
+}
+
+type Query {
+  allMeetups: [Meetup]!
+  allTags: [Tag]!
+}
