@@ -131,7 +131,7 @@ class BubbleChart extends Component {
         }
     }
 
-    clearSelection = () => this.onSelection && this.onSelection(null);
+    clearSelection = () => this.props.onSelection && this.props.onSelection(null);
 
     render() {
         const { bubbles } = this.state;

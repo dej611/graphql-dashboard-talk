@@ -104,7 +104,6 @@ class MeetupChart extends PureComponent{
                         return <p>Error</p>
                     }
                     const selection = getSelection('meetup', data.allMeetups, data.selection);
-                    console.log('Meetup', selection, data.selection);
                     return <Chart 
                             data={data.allMeetups} 
                             label='name' 
