@@ -56,11 +56,11 @@ I diversi branch in questo repository sono stati numerati per mostrare passo dop
 
 In questo branch si è creato il progetto base con `create-react-app`.
 
-### 01-apollo
+### 01-apollo branch
 
 In questo branch si è aggiunto al progetto Apollo Client con un componente Query per recuperare i dati dal server e mostrarli testualmente.
 
-### 02-add-chart
+### 02-add-chart branch
 
 In questo branch si è aggiunta una nuova dipendenza `react-vis` e aggiunto il contenuto del componente `Chart.js`.
 Il codice del grafico è ispirato a questa demo: http://vallandingham.me/bubble_charts_with_d3v4.html
@@ -71,11 +71,11 @@ Se doveste avere un errore sul browser, aggiungete la dipendenza dalla console:
 npm install react-vis
 ```
 
-### 03-add-another-chart
+### 03-add-another-chart branch
 
 In questo branch viene aggiunto un nuovo grafico, con relativa Query GraphQL.
 
-### 04-apollo-link-state
+### 04-apollo-link-state branch
 
 In questo branch viene aggiunto uno state manager all'app sfruttando le funzionalità di Apollo Link State.
 Oltre allo schema e ai resolver lato client, vengono arricchite le Query GraphQL con parametri client (vedere la notazione `@client`).
