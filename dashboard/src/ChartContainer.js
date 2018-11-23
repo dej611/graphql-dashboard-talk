@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 
 import {Query, Mutation} from 'react-apollo';
 import gql from 'graphql-tag';
+import Chart from './Chart';
 
 const getSelection = (type, list, selection) => {
     if(!selection){
@@ -33,14 +34,10 @@ const ALL_TAGS = gql`
     }
 `
 
-<<<<<<< HEAD
-export default class ChartContainer extends PureComponent{
-=======
 class TagChart extends PureComponent{
     handleSelection = (selection) => {
         this.props.onSelection({selection: selection && {type: 'tag', id: selection.id, __typename: 'Selection' }});
     }
->>>>>>> :sparkles: Add selection mutation/state
     render(){
         return <div>
             Chart container
@@ -52,13 +49,6 @@ class TagChart extends PureComponent{
                     if(error){
                         return <p>Error</p>
                     }
-<<<<<<< HEAD
-                    return <div>
-                        {data.allTags.map( (tag) => {
-                            return <p>[{tag.id}] - {tag.name} => {tag.meetups.length} meetups</p>
-                        })}
-                    </div>
-=======
                     const selection = getSelection('tag', data.allTags, data.selection);
                     return <Chart 
                             data={data.allTags} 
@@ -110,14 +100,10 @@ class MeetupChart extends PureComponent{
                             size={meetup => meetup.tags.length} 
                             selection={selection}
                             onSelection={this.handleSelection}/>;
->>>>>>> :sparkles: Add selection mutation/state
                 }}
             </Query>
         </div>;
     }
-<<<<<<< HEAD
-};
-=======
 };
 
 const MUTATION = gql`
@@ -136,4 +122,3 @@ export default class ChartsContainer extends PureComponent{
         </Mutation>
     }
 }
->>>>>>> :sparkles: Add selection mutation/state
