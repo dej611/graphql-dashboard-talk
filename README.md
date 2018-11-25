@@ -1,7 +1,7 @@
 # Costruire una dashboard con GraphQL e React
 
-[Link slide del talk](https://docs.google.com/presentation/d/1hY6oVJSPujvnBYfFrGeRi_MyafQjkbiobfK23ASHtXw/edit?usp=sharing)
-[Video talk](https://youtu.be/U41lUJCs5H4?t=1768)
+* [Link slide del talk](https://docs.google.com/presentation/d/1hY6oVJSPujvnBYfFrGeRi_MyafQjkbiobfK23ASHtXw/edit?usp=sharing)  
+* [Video talk](https://youtu.be/U41lUJCs5H4?t=1768)
 
 Questo repository contiene il codice mostrato durante il talk del 21/11/2018 al meetup RomaJS per la parte client.
 
@@ -66,6 +66,8 @@ In questo branch si è creato il progetto base con `create-react-app`.
 
 In questo branch si è aggiunto al progetto Apollo Client con un componente Query per recuperare i dati dal server e mostrarli testualmente.
 
+[Clicca qui per vedere le differenze rispetto a `master`.](https://github.com/dej611/graphql-dashboard-talk/compare/master...01-apollo)
+
 ### 02-add-chart branch
 
 In questo branch si è aggiunta una nuova dipendenza `react-vis` e aggiunto il contenuto del componente `Chart.js`.
@@ -77,11 +79,18 @@ Se doveste avere un errore sul browser, aggiungete la dipendenza dalla console:
 npm install react-vis
 ```
 
+[Clicca qui per vedere le differenze rispetto a `01-apollo`.](https://github.com/dej611/graphql-dashboard-talk/compare/01-apollo...02-add-chart)
+
 ### 03-add-another-chart branch
 
 In questo branch viene aggiunto un nuovo grafico, con relativa Query GraphQL.
+
+[Clicca qui per vedere le differenze rispetto a `02-add-chart`.](https://github.com/dej611/graphql-dashboard-talk/compare/02-add-chart...03-add-another-chart)
 
 ### 04-apollo-link-state branch
 
 In questo branch viene aggiunto uno state manager all'app sfruttando le funzionalità di Apollo Link State.
 Oltre allo schema e ai resolver lato client, vengono arricchite le Query GraphQL con parametri client (vedere la notazione `@client`).
+
+
+[Clicca qui per vedere le differenze rispetto a `03-add-another-chart`.](https://github.com/dej611/graphql-dashboard-talk/compare/02-add-chart...04-apollo-link-state)
