@@ -9,6 +9,12 @@ Ad ogni modo è stata inclusa una configurazione Docker (mediante `docker-compos
 
 Per informazioni riguardo la prima parte del talk (cioè come ottimizzare GraphQL lato server) fare riferimento a questo repository: https://github.com/GraphRM/graphql-graphdb
 
+## Overview architettura
+
+Questo è uno schema basilare dell'architettura e delle tecnologie usate:
+
+![repo-architecture](./diagram.png)
+
 ### Requisiti
 
 * NodeJS > 8
