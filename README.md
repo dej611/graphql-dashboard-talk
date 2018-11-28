@@ -93,4 +93,4 @@ In questo branch viene aggiunto uno state manager all'app sfruttando le funziona
 Oltre allo schema e ai resolver lato client, vengono arricchite le Query GraphQL con parametri client (vedere la notazione `@client`).
 
 
-[Clicca qui per vedere le differenze rispetto a `03-add-another-chart`.](https://github.com/dej611/graphql-dashboard-talk/compare/03-add-another-chart branch...04-apollo-link-state)
+[Clicca qui per vedere le differenze rispetto a `03-add-another-chart`.](https://github.com/dej611/graphql-dashboard-talk/compare/03-add-another-chart...04-apollo-link-state)
