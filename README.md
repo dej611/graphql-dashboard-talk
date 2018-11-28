@@ -1,6 +1,6 @@
 # Costruire una dashboard con GraphQL e React
 
-* [Link slide del talk](https://docs.google.com/presentation/d/1hY6oVJSPujvnBYfFrGeRi_MyafQjkbiobfK23ASHtXw/edit?usp=sharing)  
+* [Link slide del talk](https://docs.google.com/presentation/d/1hY6oVJSPujvnBYfFrGeRi_MyafQjkbiobfK23ASHtXw/edit?usp=sharing)
 * [Video talk](https://youtu.be/U41lUJCs5H4?t=1768)
 
 Questo repository contiene il codice mostrato durante il talk del 21/11/2018 al meetup RomaJS per la parte client.
@@ -93,4 +93,4 @@ In questo branch viene aggiunto uno state manager all'app sfruttando le funziona
 Oltre allo schema e ai resolver lato client, vengono arricchite le Query GraphQL con parametri client (vedere la notazione `@client`).
 
 
-[Clicca qui per vedere le differenze rispetto a `03-add-another-chart`.](https://github.com/dej611/graphql-dashboard-talk/compare/02-add-chart...04-apollo-link-state)
+[Clicca qui per vedere le differenze rispetto a `03-add-another-chart`.](https://github.com/dej611/graphql-dashboard-talk/compare/03-add-another-chart branch...04-apollo-link-state)
